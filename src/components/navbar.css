@@ -1,0 +1,13 @@
+img {
+    display: block;
+    margin: auto;
+    align-content: center;
+    max-height: 40px;
+    padding: 4px;
+}
+
+.nav {
+    min-height: 50px;
+    max-height: 50px;
+    background-color: #111111;
+}
