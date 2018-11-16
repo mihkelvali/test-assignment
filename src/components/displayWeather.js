@@ -33,10 +33,10 @@ class DisplayWeather extends Component {
         this.performSearch();
     }
 
-    performSearch() {
-        this.myCallback();
+    performSearch = (query = 'new') => {
+        //this.myCallback();
 
-        let apiCall = 'http://internship-proxy.aw.ee:3001/location?query=' + this.state.userQuery;
+        let apiCall = 'http://internship-proxy.aw.ee:3001/location?query=' + query;
         let testQuery = this.props.callBack;
         console.log('Query value component did mount: ' + testQuery);
 
@@ -52,7 +52,7 @@ class DisplayWeather extends Component {
                 weatherInfo: data,
             })
         });
-    }
+    };
 
     render() {
         //let testQuery = this.props.callBack;

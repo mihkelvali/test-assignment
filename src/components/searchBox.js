@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import pin from '../icons/ic-pin.svg';
-import './searchBox.css';
+import './search.css';
 import DisplayWeather from './displayWeather';
-import DisplaySearchResults from './displaySearchResults';
+import DisplaySearchResults from './suggestions';
 
 class SearchBox extends Component {
     constructor(props) {
