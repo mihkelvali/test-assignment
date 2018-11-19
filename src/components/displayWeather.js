@@ -49,7 +49,7 @@ class DisplayWeather extends Component {
             //console.log(data);
             this.setState ({
                 isLoaded: true,
-                weatherInfo: data,
+                suggestions: data,
             })
         });
     };
