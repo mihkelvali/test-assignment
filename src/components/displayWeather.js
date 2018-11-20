@@ -1,84 +1,33 @@
 import React, {Component} from 'react';
+import './displayWeather.css';
 
 class DisplayWeather extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            weatherInfo: [],
-            isLoaded: false,
-            userQuery: this.props.callBack
-        }
+            locationInfo: [],
+            applicable_date: '',
+            min_temp: '',
+            max_temp: '',
+            wind_speed: '',
+            weather_state_abbr: ''
+        };
     }
-
-    /*someFn = () => {
-        var query1;
-        this.props.callbackFromParent(query1);
-    }*/
-
-    /*handleOnKeyUp = (event) => {
-        let inputBox = document.getElementById('city')
-        let query = inputBox.value;
-        this.setState({queryParam: query});
-        console.log(this.state.queryParam);
-    };*/
-
-    myCallback = (callBack) => {
-        let testQuery = this.props.callBack;
-        console.log('Query value myCallback ' + testQuery);
-        this.setState({ userQuery: testQuery });
-        console.log('State value myCallback: ' +this.state);
-    };
-
-    componentDidMount() {
-        this.performSearch();
-    }
-
-    performSearch = (query = 'new') => {
-        //this.myCallback();
-
-        let apiCall = 'http://internship-proxy.aw.ee:3001/location?query=' + query;
-        let testQuery = this.props.callBack;
-        console.log('Query value component did mount: ' + testQuery);
-
-        console.log('api: ' +apiCall);
-
-
-        fetch(apiCall).then(response => {
-            return response.json();
-        }).then(data => {
-            //console.log(data);
-            this.setState ({
-                isLoaded: true,
-                suggestions: data,
-            })
-        });
-    };
 
     render() {
-        //let testQuery = this.props.callBack;
-        //console.log('Query value ' + testQuery);
-        //this.setState({userQuery: testQuery});
-        let {isLoaded, weatherInfo} = this.state;
-        console.log('State: ' + this.state);
-        console.log('isLoaded: ' + isLoaded);
-        if (!isLoaded) {
-            return <div>Loading...</div>
-        }
-
-        else {
-            return (
-                <div >
-                    <div id='output'> </div>
-                    <ul>
-                        {weatherInfo.map(data => (
-                            <li key={data.woeid}>
-                                Location: {data.title}
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            );
-        }
+        return(
+            <div className="containerBox">
+                {this.props.locationInfo.slice(0,3).map((data, id) => (
+                    <div className="display" key={id}>
+                        <div className="date">{new Date(data.applicable_date).toLocaleDateString()}</div>
+                        <div className="icon">{data.weather_state_abbr}</div>
+                        <div className="temp">Min: {parseFloat(data.min_temp).toFixed(2)}</div>
+                        <div className="temp">Max: {parseFloat(data.max_temp).toFixed(2)}</div>
+                        <div className="wind">{parseInt(data.wind_speed)}mph</div>
+                    </div>
+                ))}
+            </div>
+        )
     }
 }
 
