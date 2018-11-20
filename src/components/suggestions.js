@@ -10,9 +10,8 @@ class Suggestions extends Component {
             locationData: [],
             isLoaded: false,
             woeid: '',
-            date: new Date(),
-            minTemp: 0,
-            maxTemp: 0
+            icon1: ''
+
         }
     }
 
@@ -23,7 +22,8 @@ class Suggestions extends Component {
         }).then(data => {
             this.setState ({
                 isLoaded: true,
-                locationData: data.consolidated_weather
+                locationData: data.consolidated_weather,
+                icon1: data.consolidated_weather[0].weather_state_abbr
             })
         });
     };
@@ -53,8 +53,7 @@ class Suggestions extends Component {
                     </ul>
                     <DisplayWeather
                         locationInfo={this.state.locationData}
-                        dateInfo={this.state.date}
-                        minInfo={this.state.minTemp}
+                        icon={this.state.icon1}
                     />
             </div>
         );

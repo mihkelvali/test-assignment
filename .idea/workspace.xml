@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a69d52a7-910a-4467-8b12-3e7eefdba993" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/components/displayWeather.css" afterPath="$PROJECT_DIR$/src/components/displayWeather.css" />
       <change beforePath="$PROJECT_DIR$/src/components/displayWeather.js" afterPath="$PROJECT_DIR$/src/components/displayWeather.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/search.js" afterPath="$PROJECT_DIR$/src/components/search.js" />
       <change beforePath="$PROJECT_DIR$/src/components/suggestions.js" afterPath="$PROJECT_DIR$/src/components/suggestions.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -42,8 +40,8 @@
       <file leaf-file-name="suggestions.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/suggestions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="25" column="55" lean-forward="true" selection-start-line="25" selection-start-column="55" selection-end-line="25" selection-end-column="55" />
+            <state relative-caret-position="810">
+              <caret line="54" column="62" lean-forward="true" selection-start-line="54" selection-start-column="62" selection-end-line="54" selection-end-column="62" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -54,8 +52,8 @@
       <file leaf-file-name="displayWeather.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/displayWeather.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" column="26" lean-forward="true" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
+            <state relative-caret-position="134">
+              <caret line="17" column="92" lean-forward="false" selection-start-line="17" selection-start-column="92" selection-end-line="17" selection-end-column="92" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -142,9 +140,9 @@
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/components/suggestions.css" />
         <option value="$PROJECT_DIR$/src/components/search.css" />
-        <option value="$PROJECT_DIR$/src/components/suggestions.js" />
         <option value="$PROJECT_DIR$/src/components/search.js" />
         <option value="$PROJECT_DIR$/src/components/displayWeather.css" />
+        <option value="$PROJECT_DIR$/src/components/suggestions.js" />
         <option value="$PROJECT_DIR$/src/components/displayWeather.js" />
       </list>
     </option>
@@ -353,7 +351,7 @@
       <workItem from="1542104267314" duration="5021000" />
       <workItem from="1542142786297" duration="26403000" />
       <workItem from="1542614316944" duration="9345000" />
-      <workItem from="1542626758308" duration="17965000" />
+      <workItem from="1542626758308" duration="18626000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <created>1542371965554</created>
@@ -376,11 +374,18 @@
       <option name="project" value="LOCAL" />
       <updated>1542627257960</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="weather updates">
+      <created>1542725299940</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1542725299940</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61558000" />
+    <option name="totallyTimeSpent" value="62219000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="725" extended-state="0" />
@@ -452,7 +457,8 @@
     <MESSAGE value="." />
     <MESSAGE value="query search works" />
     <MESSAGE value="search autocomplete css" />
-    <option name="LAST_COMMIT_MESSAGE" value="search autocomplete css" />
+    <MESSAGE value="weather updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="weather updates" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -884,8 +890,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/suggestions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="25" column="55" lean-forward="true" selection-start-line="25" selection-start-column="55" selection-end-line="25" selection-end-column="55" />
+        <state relative-caret-position="810">
+          <caret line="54" column="62" lean-forward="true" selection-start-line="54" selection-start-column="62" selection-end-line="54" selection-end-column="62" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
@@ -894,8 +900,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/displayWeather.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="26" lean-forward="true" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
+        <state relative-caret-position="134">
+          <caret line="17" column="92" lean-forward="false" selection-start-line="17" selection-start-column="92" selection-end-line="17" selection-end-column="92" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>

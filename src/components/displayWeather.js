@@ -15,12 +15,13 @@ class DisplayWeather extends Component {
     }
 
     render() {
+        let url = "https://www.metaweather.com//static/img/weather/"+this.props.icon+".svg";
         return(
             <div className="containerBox">
                 {this.props.locationInfo.slice(0,3).map((data, id) => (
                     <div className="display" key={id}>
                         <div className="date">{new Date(data.applicable_date).toLocaleDateString()}</div>
-                        <div className="icon">{data.weather_state_abbr}</div>
+                        <div className="icon"><img width="30px" src={url} alt="icon"/></div>
                         <div className="temp">Min: {parseFloat(data.min_temp).toFixed(2)}</div>
                         <div className="temp">Max: {parseFloat(data.max_temp).toFixed(2)}</div>
                         <div className="wind">{parseInt(data.wind_speed)}mph</div>
