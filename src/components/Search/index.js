@@ -34,12 +34,22 @@ class Search extends Component {
         }
     };
 
-    handleClick = () => {
+    /*handleClick = () => {
+        if (this.state.query === '') {
+            const x = document.getElementById('ns');
+            x.style.display = 'block';
+        }
         this.setState({
             weatherSuggestions: []
         });
 
     };
+
+    handleFocus = () => {
+        this.setState({query: ''}, () => {
+            this.getData();
+        });
+    };*/
 
     render() {
         return (
@@ -47,7 +57,7 @@ class Search extends Component {
                 <div className="center">
                     <img src={pin} alt="icon"/>
                     <p id="ns">Search location...</p>
-                    <input type="search" ref={input => this.search = input} placeholder="Search location.." onClick={this.handleClick} id="city" onKeyUp={this.handleOnKeyUp}/>
+                    <input type="search" ref={input => this.search = input}  placeholder="Search location.." onFocus={this.handleFocus} onClick={this.handleClick} id="city" onKeyUp={this.handleOnKeyUp}/>
                     <Suggestions weatherInfo={this.state.weatherSuggestions}/>
                 </div>
             </React.Fragment>

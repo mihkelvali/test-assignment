@@ -10,8 +10,6 @@ class Suggestions extends Component {
             locationData: [],
             isLoaded: false,
             woeid: '',
-            icon1: ''
-
         }
     }
 
@@ -34,18 +32,23 @@ class Suggestions extends Component {
     };
 
     render() {
-        return (
-            <div>
-                <ul className="suggestions" id="locationsList">
-                    {this.props.weatherInfo.map(data => (
+        if (this.props.weatherInfo.length === 0) {
+            return null;
+        }
+        else {
+            return (
+                <div>
+                    <ul className="suggestions" id="locationsList">
+                        {this.props.weatherInfo.map(data => (
                             <li onClick={this.onClick} key={data.woeid} id={data.woeid}>
                                 {data.title}
                             </li>
-                    ))}
+                        ))}
                     </ul>
                     <DisplayWeather locationInfo={this.state.locationData}/>
-            </div>
-        );
+                </div>
+            );
+        }
 
     }
 }
