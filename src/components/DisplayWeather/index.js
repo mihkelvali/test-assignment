@@ -15,15 +15,28 @@ class DisplayWeather extends Component {
         };
     }
 
-    checkDate = (weather) => {
-        //const today = new Date();
-        //console.log(today);
-        //console.log(weather);
+    validateDate = (date) => {
+        date = new Date(date).toLocaleDateString();
+        const today = new Date();
+        const tomorrow = new Date();
+        tomorrow.setDate(today.getDate() + 1);
+        if (date === today.toLocaleDateString()) {
+            return "Today";
+        }
+        else if (date === tomorrow.toLocaleDateString()) {
+            return "Tomorrow";
+        }
+        else return date;
+    };
+
+    validateUrl = (iconState) => {
+        const urlStart = "https://www.metaweather.com//static/img/weather/";
+        const extension = ".svg";
+        const url = urlStart + iconState + extension;
+        return <img src={url} alt="icon"/>;
     };
 
     render() {
-        const url = "https://www.metaweather.com//static/img/weather/";
-        const extension = ".svg";
         if (this.props.locationInfo.length === 0) {
             return null;
         }
@@ -32,10 +45,9 @@ class DisplayWeather extends Component {
                 <div className="containerBox">
                     {this.props.locationInfo.slice(0, 3).map((data, id) => (
                         <div className="display" key={id}>
-                            <div className="date">{new Date(data.applicable_date).toLocaleDateString()}</div>
+                            <div className="date">{this.validateDate(data.applicable_date)}</div>
                             <div className="icon">
-                                {this.checkDate(data.applicable_date)}
-                                <img src={url + data.weather_state_abbr + extension} alt="icon"/>
+                                {this.validateUrl(data.weather_state_abbr)}
                                 <p>{data.weather_state_name}</p>
                             </div>
                             <div className="temp">Min: {parseFloat(data.min_temp).toFixed(2)}</div>
