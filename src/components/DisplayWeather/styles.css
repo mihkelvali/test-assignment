@@ -1,4 +1,5 @@
 .containerBox {
+    margin-top: 15px;
     display: flex;
     justify-content: space-between;
     border: lightgrey solid 1px;

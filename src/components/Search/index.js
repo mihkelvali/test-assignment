@@ -25,12 +25,14 @@ class Search extends Component {
     };
 
     handleOnKeyUp = (e) => {
-        this.setState({query: e.target.value}, () => {
-            this.getData();
-        });
-        if (this.state.query !== '') {
-            const x = document.getElementById('ns');
-            x.style.display = 'block';
+        if (e.target.value !== '') {
+            this.refs.pTag.style.display = 'block';
+            this.setState({query: e.target.value}, () => {
+                this.getData();
+            });
+        }
+        else {
+            this.refs.pTag.style.display = 'none';
         }
     };
 
@@ -43,21 +45,23 @@ class Search extends Component {
             weatherSuggestions: []
         });
 
-    };
+    };*/
 
     handleFocus = () => {
-        this.setState({query: ''}, () => {
-            this.getData();
-        });
-    };*/
+        this.refs.pTag.style.display = 'block';
+    };
+
+    click = () => {
+        this.refs.pTag.style.display = 'none';
+    };
 
     render() {
         return (
             <React.Fragment>
                 <div className="center">
                     <img src={pin} alt="icon"/>
-                    <p id="ns">Search location...</p>
-                    <input type="search" ref={input => this.search = input}  placeholder="Search location.." onFocus={this.handleFocus} onClick={this.handleClick} id="city" onKeyUp={this.handleOnKeyUp}/>
+                    <p ref="pTag" id="ns">Search location...</p>
+                    <input type="search" ref="search"  placeholder="Search location.." onFocus={this.handleFocus} onClick={this.handleClick} id="city" onKeyUp={this.handleOnKeyUp}/>
                     <Suggestions weatherInfo={this.state.weatherSuggestions}/>
                 </div>
             </React.Fragment>

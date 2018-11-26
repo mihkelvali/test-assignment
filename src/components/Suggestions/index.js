@@ -29,6 +29,7 @@ class Suggestions extends Component {
         this.setState({woeid: locationId}, () => {
             this.getWeatherData();
         });
+        this.refs.locationsList.style.display = 'none';
     };
 
     render() {
@@ -38,7 +39,7 @@ class Suggestions extends Component {
         else {
             return (
                 <div>
-                    <ul className="suggestions" id="locationsList">
+                    <ul className="suggestions" ref='locationsList'>
                         {this.props.weatherInfo.map(data => (
                             <li onClick={this.onClick} key={data.woeid} id={data.woeid}>
                                 {data.title}
