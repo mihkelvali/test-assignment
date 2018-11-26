@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import './suggestions.css';
-import DisplayWeather from './displayWeather';
+import './styles.css';
+import DisplayWeather from '../DisplayWeather';
 
 class Suggestions extends Component {
     constructor(props) {
@@ -16,34 +16,26 @@ class Suggestions extends Component {
     }
 
     getWeatherData = () => {
-        let apiCall = 'http://internship-proxy.aw.ee:3001/location/' + this.state.woeid;
-        fetch(apiCall).then(response => {
-            return response.json();
-        }).then(data => {
+        const apiCall = 'http://internship-proxy.aw.ee:3001/location/' + this.state.woeid;
+        fetch(apiCall).then(response => response.json())
+            .then(data => {
             this.setState ({
                 isLoaded: true,
                 locationData: data.consolidated_weather,
-                icon1: data.consolidated_weather[0].weather_state_abbr
             })
         });
     };
 
-    closeList = () => {
-        let list = document.getElementById('locationsList');
-        console.log(list);
-    };
-
     onClick = (e) => {
-        let locationId = e.target.id;
+        const locationId = e.target.id;
         this.setState({woeid: locationId}, () => {
             this.getWeatherData();
-            //this.closeList();
         });
     };
 
     render() {
         return (
-            <div className="">
+            <div>
                 <ul className="suggestions" id="locationsList">
                     {this.props.weatherInfo.map(data => (
                             <li onClick={this.onClick} key={data.woeid} id={data.woeid}>
@@ -51,10 +43,7 @@ class Suggestions extends Component {
                             </li>
                     ))}
                     </ul>
-                    <DisplayWeather
-                        locationInfo={this.state.locationData}
-                        icon={this.state.icon1}
-                    />
+                    <DisplayWeather locationInfo={this.state.locationData}/>
             </div>
         );
 

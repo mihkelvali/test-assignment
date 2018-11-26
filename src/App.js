@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import Navbar from './components/navbar';
-//import SearchBox from './components/searchBox';
+import Navbar from './components/Navbar';
 import './App.css';
-import Search from './components/search';
+import Search from './components/Search';
 
 class App extends Component {
   render() {

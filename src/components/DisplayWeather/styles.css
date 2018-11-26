@@ -1,0 +1,57 @@
+.containerBox {
+    display: flex;
+    justify-content: space-between;
+    border: lightgrey solid 1px;
+    border-radius: 4px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.display {
+    padding: 20px;
+}
+
+.icon {
+    height: 50px;
+}
+
+.icon img {
+    width: 25px;
+    padding: 10px 0 10px 0;
+}
+
+.icon p {
+    padding: 10px 0 10px 40px;
+    font-size: 12px;
+    align-content: baseline;
+    display: block;
+    width: 60px;
+    color: #222222;
+}
+
+.wind img {
+    padding: 10px 0;
+    position: fixed;
+
+}
+
+.wind p {
+    padding-left: 30px;
+    display: block;
+    color: #222222;
+    height: initial;
+    position: initial;
+    width: initial;
+}
+
+.date {
+    color: #4E8BA7;
+    font-weight: bold;
+}
+
+.temp {
+    font-size: 10px;
+}
+
+.wind {
+    font-size: 12px;
+}

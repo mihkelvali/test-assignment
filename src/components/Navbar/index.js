@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import './navbar.css';
-import logo from '../icons/mc-logo.png';
+import './styles.css';
+import logo from '../../icons/mc-logo.png';
 
 class Navbar extends Component {
     render() {
