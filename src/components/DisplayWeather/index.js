@@ -39,22 +39,7 @@ class DisplayWeather extends Component {
     };
 
     validateWindDirection = (wind) => {
-        if (wind === 'N') return <img className={wind} src={arrow} alt="icon"/>;
-        else if (wind === 'NNE') return <img className={wind} src={arrow} alt="icon"/>;
-        else if (wind === 'NE') return <img className={wind} src={arrow} alt="icon"/>;
-        else if (wind === 'ENE') return <img className={wind} src={arrow} alt="icon"/>;
-        else if (wind === 'E') return <img className={wind} src={arrow} alt="icon"/>;
-        else if (wind === 'ESE') return <img className={wind} src={arrow} alt="icon"/>;
-        else if (wind === 'SE') return <img className={wind} src={arrow} alt="icon"/>;
-        else if (wind === 'SSE') return <img className={wind} src={arrow} alt="icon"/>;
-        else if (wind === 'S') return <img src={arrow} alt="icon"/>;
-        else if (wind === 'SSW') return <img className={wind} src={arrow} alt="icon"/>;
-        else if (wind === 'WSW') return <img className={wind} src={arrow} alt="icon"/>;
-        else if (wind === 'W') return <img className={wind} src={arrow} alt="icon"/>;
-        else if (wind === 'WNW') return <img className={wind} src={arrow} alt="icon"/>;
-        else if (wind === 'NW') return <img className={wind} src={arrow} alt="icon"/>;
-        else if (wind === 'NNW') return <img className={wind} src={arrow} alt="icon"/>;
-        else console.log('no match');
+        return  wind ? <img className={wind} src={arrow} alt="icon"/> : console.log('no match');
     };
 
     render() {
