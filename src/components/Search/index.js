@@ -8,7 +8,6 @@ class Search extends Component {
         super(props);
         this.state = {
             weatherSuggestions: [],
-            isLoaded: false,
             query: '',
         }
     }
@@ -18,7 +17,6 @@ class Search extends Component {
         fetch(apiCall).then(response => response.json())
             .then(data => {
             this.setState ({
-                isLoaded: true,
                 weatherSuggestions: data,
             })
         });

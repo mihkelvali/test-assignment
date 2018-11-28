@@ -11,7 +11,9 @@ class DisplayWeather extends Component {
             min_temp: '',
             max_temp: '',
             wind_speed: '',
-            weather_state_abbr: ''
+            wind_direction_compass: '',
+            weather_state_abbr: '',
+            weather_state_name: ''
         };
     }
 
@@ -34,6 +36,25 @@ class DisplayWeather extends Component {
         const extension = ".svg";
         const url = urlStart + iconState + extension;
         return <img src={url} alt="icon"/>;
+    };
+
+    validateWindDirection = (wind) => {
+        if (wind === 'N') return <img className={wind} src={arrow} alt="icon"/>;
+        else if (wind === 'NNE') return <img className={wind} src={arrow} alt="icon"/>;
+        else if (wind === 'NE') return <img className={wind} src={arrow} alt="icon"/>;
+        else if (wind === 'ENE') return <img className={wind} src={arrow} alt="icon"/>;
+        else if (wind === 'E') return <img className={wind} src={arrow} alt="icon"/>;
+        else if (wind === 'ESE') return <img className={wind} src={arrow} alt="icon"/>;
+        else if (wind === 'SE') return <img className={wind} src={arrow} alt="icon"/>;
+        else if (wind === 'SSE') return <img className={wind} src={arrow} alt="icon"/>;
+        else if (wind === 'S') return <img src={arrow} alt="icon"/>;
+        else if (wind === 'SSW') return <img className={wind} src={arrow} alt="icon"/>;
+        else if (wind === 'WSW') return <img className={wind} src={arrow} alt="icon"/>;
+        else if (wind === 'W') return <img className={wind} src={arrow} alt="icon"/>;
+        else if (wind === 'WNW') return <img className={wind} src={arrow} alt="icon"/>;
+        else if (wind === 'NW') return <img className={wind} src={arrow} alt="icon"/>;
+        else if (wind === 'NNW') return <img className={wind} src={arrow} alt="icon"/>;
+        else console.log('no match');
     };
 
     render() {
@@ -63,7 +84,7 @@ class DisplayWeather extends Component {
                                         <td className="smallText">{parseInt(data.min_temp, 10)}&deg;C</td>
                                     </tr>
                                     <tr className="wind">
-                                        <td><img src={arrow} alt="icon"/></td>
+                                        <td>{this.validateWindDirection(data.wind_direction_compass)}</td>
                                         <td className="smallText">{parseInt(data.wind_speed, 10)}mph</td>
                                     </tr>
                                 </tbody>

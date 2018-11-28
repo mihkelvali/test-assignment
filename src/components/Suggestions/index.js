@@ -8,7 +8,6 @@ class Suggestions extends Component {
         this.state = {
             weatherInfo: [],
             locationData: [],
-            isLoaded: false,
             woeid: '',
         }
     }
