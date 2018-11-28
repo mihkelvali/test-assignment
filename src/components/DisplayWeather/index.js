@@ -45,17 +45,29 @@ class DisplayWeather extends Component {
                 <div className="containerBox">
                     {this.props.locationInfo.slice(0, 3).map((data, id) => (
                         <div className="display" key={id}>
-                            <div className="date">{this.validateDate(data.applicable_date)}</div>
-                            <div className="icon">
-                                {this.validateUrl(data.weather_state_abbr)}
-                                <p>{data.weather_state_name}</p>
-                            </div>
-                            <div className="temp">Min: {parseFloat(data.min_temp).toFixed(2)}</div>
-                            <div className="temp">Max: {parseFloat(data.max_temp).toFixed(2)}</div>
-                            <div className="wind">
-                                <img src={arrow} alt="icon"/>
-                                <p>{parseInt(data.wind_speed, 10)} mph</p>
-                            </div>
+                            <table>
+                                <tbody>
+                                    <tr className="date">
+                                        <td>{this.validateDate(data.applicable_date)}</td>
+                                    </tr>
+                                    <tr className="icon">
+                                        <td>{this.validateUrl(data.weather_state_abbr)}</td>
+                                        <td className="text">{data.weather_state_name}</td>
+                                    </tr>
+                                    <tr className="temp">
+                                        <td>Max:</td>
+                                        <td className="smallText">{parseInt(data.max_temp, 10)}&deg;C</td>
+                                    </tr>
+                                    <tr className="temp">
+                                        <td>Min:</td>
+                                        <td className="smallText">{parseInt(data.min_temp, 10)}&deg;C</td>
+                                    </tr>
+                                    <tr className="wind">
+                                        <td><img src={arrow} alt="icon"/></td>
+                                        <td className="smallText">{parseInt(data.wind_speed, 10)}mph</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     ))}
                 </div>

@@ -24,8 +24,8 @@ class Search extends Component {
         });
     };
 
-    handleOnKeyUp = (e) => {
-            this.setState({query: e.target.value}, () => {
+    handleOnKeyUp = () => {
+            this.setState({query: this.refs.search.value}, () => {
                 this.getData();
             });
     };

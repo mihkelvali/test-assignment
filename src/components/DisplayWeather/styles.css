@@ -1,5 +1,5 @@
 .containerBox {
-    margin-top: 15px;
+    margin-top: 10px;
     display: flex;
     justify-content: space-between;
     border: lightgrey solid 1px;
@@ -8,40 +8,13 @@
 }
 
 .display {
-    padding: 20px;
+    padding: 10px;
+    width: 33%;
 }
 
-.icon {
-    height: 50px;
-}
-
-.icon img {
-    width: 25px;
-    padding: 10px 0 10px 0;
-}
-
-.icon p {
-    padding: 10px 0 10px 40px;
-    font-size: 12px;
-    align-content: baseline;
-    display: block;
-    width: 60px;
-    color: #222222;
-}
-
-.wind img {
-    padding: 10px 0;
-    position: fixed;
-
-}
-
-.wind p {
-    padding-left: 30px;
-    display: block;
-    color: #222222;
-    height: initial;
-    position: initial;
-    width: initial;
+td {
+    max-width: 50px;
+    min-width: 50px;
 }
 
 .date {
@@ -49,10 +22,53 @@
     font-weight: bold;
 }
 
+.icon {
+    height: 48px;;
+}
+
+.icon img {
+    width: 30px;
+    position: initial;
+    padding: initial;
+    margin: 0 0 0 5px;
+    vertical-align: bottom;
+}
+
+.icon td.text {
+    vertical-align: bottom;
+    padding: 10px 0 0 0;
+    font-size: 12px;
+    display: block;
+    width: 60px;
+    color: #222222;
+}
+
 .temp {
-    font-size: 10px;
+    font-size: 12px;
+}
+
+.temp td.smallText {
+    margin-left: 18px;
 }
 
 .wind {
     font-size: 12px;
+    height: 30px;
+}
+
+.wind td {
+    padding-top: 10px;
+}
+
+.wind td img {
+    position: initial;
+    margin: -15px 0 0 -5px;
+}
+
+.wind td.smallText {
+    display: block;
+    color: #222222;
+    height: initial;
+    position: initial;
+    width: initial;
 }
