@@ -17,8 +17,7 @@ class Suggestions extends Component {
         fetch(apiCall).then(response => response.json())
             .then(data => {
             this.setState ({
-                isLoaded: true,
-                locationData: data.consolidated_weather,
+                locationData: data.consolidated_weather
             })
         });
     };
